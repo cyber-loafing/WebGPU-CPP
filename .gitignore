@@ -1,0 +1,51 @@
+# ==== 编译产物 ====
+/cmake-build-*/
+/build/
+/out/
+/bin/
+/lib/
+/dist/
+/*.exe
+/*.obj
+/*.dll
+/*.lib
+/*.pdb
+
+# ==== CMake 中间文件 ====
+CMakeFiles/
+CMakeCache.txt
+Makefile
+cmake_install.cmake
+CTestTestfile.cmake
+Testing/
+install_manifest.txt
+
+# ==== IDE 相关 ====
+.idea/
+*.sln
+*.vcxproj*
+.vscode/
+
+# JetBrains IDE indexing files
+.clion*
+
+# ==== FetchContent 依赖 ====
+/_deps/
+/webgpu/patch/
+/webgpu/include/
+/webgpu/include-emscripten/
+/webgpu/cmake/FetchDawn.cmake
+
+# ==== 日志、临时文件 ====
+*.log
+*.tmp
+*.swp
+*~
+
+# ==== 系统文件 ====
+.DS_Store
+Thumbs.db
+
+# ==== Python 脚本辅助（如自动下载 dxc） ====
+__pycache__/
+*.pyc
