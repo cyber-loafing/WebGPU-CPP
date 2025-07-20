@@ -30,11 +30,11 @@ install_manifest.txt
 .clion*
 
 # ==== FetchContent 依赖 ====
-/_deps/
-/webgpu/patch/
-/webgpu/include/
-/webgpu/include-emscripten/
-/webgpu/cmake/FetchDawn.cmake
+#/_deps/
+#/webgpu/patch/
+#/webgpu/include/
+#/webgpu/include-emscripten/
+#/webgpu/cmake/FetchDawn.cmake
 
 # ==== 日志、临时文件 ====
 *.log
