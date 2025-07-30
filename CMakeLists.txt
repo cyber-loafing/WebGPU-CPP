@@ -7,11 +7,17 @@ project(
 
 # Include webgpu directory, to define the 'webgpu' target
 add_subdirectory(webgpu)
+#add_subdirectory(glfw)
+add_subdirectory(glfw3webgpu)
 
-add_executable(App main.cpp)
+add_executable(App
+		main.cpp
+		webgpu-utils.h
+		webgpu-utils.cpp
+)
 
 # Add the 'webgpu' target as a dependency of our App
-target_link_libraries(App PRIVATE webgpu)
+target_link_libraries(App PRIVATE webgpu glfw glfw3webgpu)
 
 # The application's binary must find wgpu.dll or libwgpu.so at runtime,
 # so we automatically copy it (it's called WGPU_RUNTIME_LIB in general)
@@ -42,4 +48,7 @@ endif()
 if (EMSCRIPTEN)
 	# Generate a full web page rather than a simple WebAssembly module
 	set_target_properties(App PROPERTIES SUFFIX ".html")
+
+	# Enable the use of emscripten_sleep()
+	target_link_options(App PRIVATE -sASYNCIFY)
 endif()
